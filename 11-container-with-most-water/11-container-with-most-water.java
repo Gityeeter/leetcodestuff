@@ -19,7 +19,7 @@ class Solution {
             {
                 right--;
             }
-            System.out.println("left: " + height[left] + " right: " + height[right] + " max: " + max);
+       //     System.out.println("left: " + height[left] + " right: " + height[right] + " max: " + max);
         }
         return max;
     }
