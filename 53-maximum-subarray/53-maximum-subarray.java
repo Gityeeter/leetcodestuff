@@ -1,27 +1,23 @@
 class Solution {
-    public int maxSubArray(int[] nums) {
-        int max = nums[0];
-        int current =0;
-        for(int i =0;i<nums.length;i++)
+    public int maxSubArray(int[] nums) 
+    {
+        int maxValue = -99999999;
+        int currentValue = 0;
+        for(int i = 0;i<nums.length;i++)
+        {
+            if(currentValue + nums[i] < nums[i])
             {
-            
-                if(current + nums[i] > 0)
-                {
-                    if(current + nums[i] > max)
-                    {
-                        max = current + nums[i];
-                    }
-                    current = current + nums[i];
-                }
-            else
-                {
-                if(nums[i] > max)
-                {
-                    max = nums[i];
-                }
-                    current = 0;
-                }
+                currentValue = nums[i];
             }
-        return max;
+            else
+            {
+                currentValue = currentValue + nums[i];
+            }
+            if(currentValue > maxValue)
+            {
+                maxValue = currentValue;
+            }
         }
+        return maxValue;
+    }
 }
